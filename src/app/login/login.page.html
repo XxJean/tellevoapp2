@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Inicio de Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <img class="background-image" src="assets/icon/bmrojo.jpg" alt="Imagen de fondo" />
+
+    <!-- Formulario de inicio de sesión -->
+    <div class="login-form">
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <ion-item>
+          <ion-label position="floating">Nombre de Usuario</ion-label>
+          <ion-input formControlName="username" placeholder="usuario" type="text"></ion-input>
+        </ion-item>
+        <div *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty || loginForm.get('username')?.touched)">
+          <ion-text color="danger">
+            <p *ngIf="loginForm.get('username')?.errors?.['required']">El nombre de usuario es requerido.</p>
+            <p *ngIf="loginForm.get('username')?.errors?.['pattern']">Solo se permiten letras y números.</p>
+          </ion-text>
+        </div>
+
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input formControlName="password" placeholder="4 números" type="password"></ion-input>
+        </ion-item>
+        <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">
+          <ion-text color="danger">
+            <p *ngIf="loginForm.get('password')?.errors?.['required']">La contraseña es requerida.</p>
+            <p *ngIf="loginForm.get('password')?.errors?.['minlength']">La contraseña debe tener exactamente 4 caracteres.</p>
+            <p *ngIf="loginForm.get('password')?.errors?.['pattern']">La contraseña solo puede contener números.</p>
+          </ion-text>
+        </div>
+        <ion-button expand="full" type="submit">Iniciar Sesión</ion-button>
+        <ion-button expand="full" (click)="goToRegister()">Registrar</ion-button>
+        <ion-button expand="full" (click)="goToRecuperacion()">Recuperar Contraseña</ion-button>
+      </form>
+    </div>
+  </div>
+</ion-content>

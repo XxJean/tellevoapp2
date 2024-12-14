@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="blue">
+    <ion-title class="ion-text-center">Te Llevo App</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Contenedor para la imagen de fondo -->
+  <div class="background-image">
+    <img src="assets/icon/corver.jpg" alt="Descripción de la imagen" />
+
+    <!-- Formulario de registro -->
+    <div class="form-section">
+      <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+        <ion-item>
+          <ion-label position="floating">Nombre de Usuario</ion-label>
+          <ion-input formControlName="username" placeholder="Ingresa un nombre de usuario"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" formControlName="password" placeholder="4 dígitos para la contraseña"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>¿Tiene auto?</ion-label>
+          <ion-checkbox formControlName="tieneAuto"></ion-checkbox>
+        </ion-item>
+
+        <ion-button expand="full" type="submit">Registrarse</ion-button>
+      </form>
+
+      <ion-button expand="full" (click)="irAUsuarios()">Cuentas registradas</ion-button>
+
+      <!-- Sección para mostrar la lista de usuarios -->
+      <div *ngIf="usuarios.length > 0" class="user-list">
+        <ion-list>
+          <ion-item *ngFor="let usuario of usuarios">
+            {{ usuario.username }} - {{ usuario.tieneAuto ? 'Sí' : 'No' }}
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+  </div>
+</ion-content>

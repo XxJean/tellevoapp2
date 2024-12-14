@@ -21,13 +21,18 @@
     "@angular/platform-browser": "^18.0.0",
     "@angular/platform-browser-dynamic": "^18.0.0",
     "@angular/router": "^18.0.0",
-    "@capacitor/app": "6.0.1",
-    "@capacitor/core": "6.1.2",
-    "@capacitor/haptics": "6.0.1",
-    "@capacitor/keyboard": "6.0.2",
-    "@capacitor/status-bar": "6.0.1",
+    "@capacitor/android": "^6.2.0",
+    "@capacitor/cli": "^6.2.0",
+    "@capacitor/core": "^6.2.0",
+    "@capacitor/geolocation": "^6.1.0",
+    "@googlemaps/js-api-loader": "^1.16.8",
     "@ionic/angular": "^8.0.0",
+    "@ionic/storage": "^4.0.0",
+    "@ionic/storage-angular": "^4.0.0",
+    "@types/google.maps": "^3.58.0",
+    "idb": "^8.0.0",
     "ionicons": "^7.2.1",
+    "localforage": "^1.10.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.2"
@@ -42,8 +47,8 @@
     "@angular/cli": "^18.0.0",
     "@angular/compiler-cli": "^18.0.0",
     "@angular/language-service": "^18.0.0",
-    "@capacitor/cli": "6.1.2",
     "@ionic/angular-toolkit": "^11.0.1",
+    "@types/googlemaps": "^3.43.3",
     "@types/jasmine": "~5.1.0",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
@@ -60,5 +65,8 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.4.0"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "platforms": [
+    "android"
+  ]
 }

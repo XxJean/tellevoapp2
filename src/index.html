@@ -21,6 +21,20 @@
 
 <body>
   <app-root></app-root>
+  
+  
+  <!-- Carga asíncrona de la API de Google Maps -->
+  
+  <script>
+    function initMap() {
+      console.log('initMap function called');
+      const map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: -34.397, lng: 150.644 },
+        zoom: 8,
+      });
+    }
+  </script>
+  
 </body>
 
 </html>

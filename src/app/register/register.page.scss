@@ -1,0 +1,50 @@
+/* Contenedor para la imagen de fondo */
+.background-image {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  
+  /* Imagen de fondo */
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen para que cubra toda el área */
+    z-index: -1; /* Coloca la imagen detrás del formulario */
+  }
+}
+
+/* Estilos para el formulario */
+.form-section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1; /* Asegura que el formulario esté delante de la imagen */
+  width: 100%;
+  max-width: 400px;
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+  padding: 20px;
+  border: 1px solid green; /* Borde verde */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilos específicos para elementos del formulario */
+ion-item {
+  --border-width: 1px;
+  --border-color: green;
+}
+
+ion-button {
+  --background: green;
+  --border-radius: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .form-section {
+    width: 90%; /* El formulario ocupa el 90% en pantallas pequeñas */
+  }
+}
